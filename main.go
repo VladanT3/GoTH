@@ -20,6 +20,7 @@ func main() {
 
 	router.Handle("/*", public())
 	router.Get("/", handlers.Make(handlers.HandleHome))
+	router.Get("/login", handlers.Make(handlers.GetLogin))
 
 	listenAddr := os.Getenv("LISTEN_ADDR")
 	slog.Info("HTTP server started on http://localhost" + listenAddr)
